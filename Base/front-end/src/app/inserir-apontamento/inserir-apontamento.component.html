@@ -1,0 +1,78 @@
+<h2>Inserir Apontamento</h2>
+<hr>
+<div class="">
+  <form method="post" #frm="ngForm" (ngSubmit)="criar(frm)">
+    <div class="ui-g-10 centraliza">
+      <div class="row">
+        <div class="ui-g-5 ui-fluid">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome" [(ngModel)]="apontamento.nome" required/>
+        </div>
+
+        <div class="ui-g-2 ui-fluid">
+          <label for="matricula">Matrícula</label>
+          <p-inputMask mask="9999" [(ngModel)]="apontamento.matricula" placeholder="9999" id="matricula" name="matricula"></p-inputMask>
+        </div>
+
+        <div class="ui-g-3 ui-fluid">
+          <label for="departamento">Departamento</label>
+          <input type="text" id="departamento" name="departamento" class="form-control" placeholder="Departamento" [(ngModel)]="apontamento.departamento" required/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="ui-g-4 ui-fluid">
+          <span>Início</span>
+          <p-inputMask mask="9999-99-99 99:99:99" [(ngModel)]="apontamento.inicio" placeholder="aaaa-mm-dd hh:mm:ss" id="inicio" name="inicio"></p-inputMask>
+        </div>
+
+        <div class="ui-g-4 ui-fluid">
+          <span>Fim</span>
+          <p-inputMask mask="9999-99-99 99:99:99" [(ngModel)]="apontamento.fim" placeholder="aaaa-mm-dd hh:mm:ss" id="fim" name="fim"></p-inputMask>
+        </div>
+
+        <div class="ui-g-2 ui-fluid">
+          <span>Duração</span>
+          <p-inputMask mask="99:99:99" [(ngModel)]="apontamento.duracao" placeholder="hh:mm:ss" id="duracao" name="duracao"></p-inputMask>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="ui-g-3 ui-fluid">
+          <label for="classificacao">Classificação da Atividade</label>
+          <input type="text" id="classificacao" name="classificacao" class="form-control" placeholder="Classificação" [(ngModel)]="apontamento.classificacao" required/>
+        </div>
+
+        <div class="ui-g-4 ui-fluid">
+          <label for="processo">Processo</label>
+          <input type="text" id="processo" name="processo" class="form-control" placeholder="Processo" [(ngModel)]="apontamento.processo" required/>
+        </div>
+
+        <div class="ui-g-3 ui-fluid">
+          <label for="processo">Cliente</label>
+          <input type="text" id="cliente" name="cliente" class="form-control" placeholder="Cliente" [(ngModel)]="apontamento.cliente" required/>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="ui-g-5 ui-fluid">
+          <h3 class="first">Detalhamento</h3>
+          <textarea rows="3" cols="5" pInputTextarea id="detalhamento" name="detalhamento" class="form-control" placeholder="Detalhamento" [(ngModel)]="apontamento.detalhamento"></textarea>
+        </div>
+
+        <div class="ui-g-5 ui-fluid">
+          <h3 class="first">Observação</h3>
+          <textarea rows="3" cols="5" pInputTextarea id="observacao" name="observacao" class="form-control" placeholder="Observação" [(ngModel)]="apontamento.observacao"></textarea>
+        </div>
+      </div>
+
+      <div class="ui-g-6 ui-fluid centraliza">
+        <div class="row">
+          <button type="button" class="margin-button btn btn-danger btn-lg" a routerLink="/">Voltar</button>
+          <button type="submit" class="margin-button btn btn-primary btn-lg" [disabled]="frm.invalid">Inserir Apontamento</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

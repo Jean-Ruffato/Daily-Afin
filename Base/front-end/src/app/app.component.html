@@ -1,0 +1,74 @@
+<div class="" *ngIf="!_userService.token">
+  <form type="post">
+     <div class="col-sm-4 col-md-3 CentralizarLogin alert-heading">
+    <div class="left-header">
+      <h2>Acessar</h2>
+    </div>
+
+    <div class="ui-inputgroup header">
+      <span class="ui-inputgroup-addon"><i class="fas fa-user"></i></span>
+      <input type="text" pInputText placeholder="Usuário" class=" form-control" autofocus name="login-username" [(ngModel)]="user.username">
+      <span *ngFor="let error of _userService.errors.username"><br />
+        {{ error }}</span>
+    </div>
+
+    <div class="ui-inputgroup header">
+      <span class="ui-inputgroup-addon"><i class="fas fa-key"></i></span>
+      <input type="password" pInputText placeholder="Senha" class=" form-control" autofocus name="login-password" [(ngModel)]="user.password">
+      <span *ngFor="let error of _userService.errors.password"><br />
+        {{ error }}</span>
+    </div>
+    <div class="card-marg">
+      <div class="row">
+        <div class="left header col-sm-4 col-md-10">
+          <button (click)="login()" class="btn btn-primary btn-lg btn-block">Acessar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <span *ngFor="let error of _userService.errors.non_field_errors">{{ error }}<br /></span>
+    </div>
+  </div>
+  </form>
+
+</div>
+<div class="back_top" *ngIf="_userService.token">
+  <div class="container-fluid Background" id="main">
+    <div class="row altura">
+      <div class="col-md-12 back_top barra-superior">
+
+        <div routerLink="/" class="fas fa-home card-marg">
+          Home
+        </div>
+
+        <a href="/daily/" class="fas fa-unlock-alt card-marg">
+          Administração
+        </a>
+
+        <div class="fas fa-user-circle card-marg logoff" routerLink="/" (click)="logout()">
+          &nbsp;Logout, &nbsp;<b> {{ _userService.username }}!!</b>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 cab-home">
+        <p class="mb-0">
+        <div class="row Margem">
+          <div class="col-sm-12 col-md-12">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+  <div class="row">
+      <div class="col-md-12 back_top barra-superior">
+          <i class="fas fa-user-alt card-marg"></i> Contato
+        <i class="fas fa-user-alt-slash card-marg"></i> {{ _userService.token_expires }}
+      </div>
+    </div>
+</div>
+
+
+  </div>
+</div>

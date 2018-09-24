@@ -1,0 +1,39 @@
+<h2>Cadastrar Perfil</h2>
+<hr>
+<div class="">
+  <form method="post" #frmp="ngForm" (ngSubmit)="criar_perfil(frmp)">
+    <div class="ui-g-10 centraliza">
+      <div class="row">
+        <div class="ui-g-5 ui-fluid">
+          <label for="Nome">Nome</label>
+          <input type="text" id="Nome" name="Nome" class="form-control" placeholder="Nome" [(ngModel)]="perfil.Nome" required/>
+        </div>
+
+        <div class="ui-g-2 ui-fluid">
+          <label for="Matricula">Matrícula</label>
+          <p-inputMask mask="9999" [(ngModel)]="perfil.Matricula" placeholder="9999" id="matricula" name="matricula"></p-inputMask>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="ui-g-4 ui-fluid">
+          <label for="Departamento">Departamento</label>
+          <input type="text" id="Departamento" name="Departamento" class="form-control" placeholder="Departamento" [(ngModel)]="perfil.Departamento" required/>
+        </div>
+
+        <div class="ui-g-3 ui-fluid">
+          <label for="Usuario">Usuário</label>
+          <input type="text" id="Usuario" name="Usuario" class="form-control" placeholder="Usuário" [(ngModel)]="perfil.Usuario" required/>
+        </div>
+      </div>
+
+      <div class="ui-g-6 ui-fluid centraliza">
+        <div class="row">
+          <button type="button" class="margin-button btn btn-danger btn-lg" a routerLink="/">Voltar</button>
+          <button type="submit" class="margin-button btn btn-primary btn-lg" [disabled]="frmp.invalid">Cadastrar Perfil</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

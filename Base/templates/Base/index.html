@@ -1,0 +1,31 @@
+{% extends "Base/base.html" %}
+{% load staticfiles %}
+{% load bootstrap %}
+{% block content %}
+
+    <app-root><div class="col-sm-4 col-md-3 CentralizarLogin">
+        <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading Centralizar">Carregando Aplicação</h4><br>
+            <center>
+                <p>A aplicação esta carregando os arquivos necessários para seu correto funcionamento</p>
+            </center>
+            <hr>
+            <p class="mb-0">
+                <center>
+                    Quando o sistema terminar de carregar você será redirecionado para a pagina correta.
+                    Caso isso não ocorra envie um email para <b>jean.ruffato@gmail.com</b>
+                </center>
+            </p>
+        </div>
+    </div>
+    </app-root>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'front-end/runtime.js' %}"></script>
+    <script type="text/javascript" src="{% static 'front-end/polyfills.js' %}"></script>
+    <script type="text/javascript" src="{% static 'front-end/styles.js' %}"></script>
+    <script type="text/javascript" src="{% static 'front-end/vendor.js' %}"></script>
+    <script type="text/javascript" src="{% static 'front-end/main.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+{% endblock %}
