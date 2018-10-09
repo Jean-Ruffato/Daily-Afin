@@ -9,11 +9,13 @@ import "rxjs-compat/add/operator/map";
 
 export class ApontamentoService {
 
+  // Url dos apontamentos na API
   atividadesUrl = ('api/apontamento/');
 
   constructor(private http: HttpClient, private _userService: UserService) {}
 
-  // Pega as questions na API
+
+  // Método que pega os apontamentos na api
   getApontamentos(){
     let httpOptions = {
       headers: new HttpHeaders({
@@ -21,11 +23,10 @@ export class ApontamentoService {
         'Authorization': 'JWT ' + this._userService.token
       })
     };
-    return this.http.get('/api/apontamento/', httpOptions)
-      .toPromise()
-      .then(apontamentos => apontamentos)
-      .then(data => { return data; });
+    return this.http.get('/api/apontamento/', httpOptions).toPromise()
+      .then(apontamentos => apontamentos).then(data => { return data; });
   }
+
 
   var;nome: any = this._userService.username;
 

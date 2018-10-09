@@ -29,7 +29,6 @@ import { ToastModule} from 'primeng/toast';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { LoadComponent } from './load/load.component';
 
-
 @NgModule({
   declarations: [AppComponent, CadastroPerfilComponent, HomeComponent, ApontamentoComponent, InserirApontamentoComponent, LoadComponent],
   imports: [BrowserModule, PaginationModule, ToastModule, HttpClientJsonpModule, ButtonModule, BrowserAnimationsModule,ReactiveFormsModule, GridModule, PaginatorModule, InputTextareaModule, InputMaskModule, FormsModule, HttpClientModule, AppRoutingModule, TabViewModule, InputTextModule,
