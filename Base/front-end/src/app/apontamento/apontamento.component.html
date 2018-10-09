@@ -13,10 +13,10 @@
         <th>Ação</th>
         <th>Nome</th>
         <th>Matrícula</th>
+        <th>Departamento</th>
         <th>Início</th>
         <th>Fim</th>
         <th>Duração</th>
-        <th>Departamento</th>
         <th>Classificação</th>
         <th>Processo</th>
         <th>Detalhamento</th>
@@ -30,8 +30,8 @@
             <td>
               <div class="row acao">
                 <p-button class="ui-button-danger" icon="fas fa-save" (onClick)="onEditComplete(
-                        apontamentos.ID, apontamentos.nome, apontamentos.matricula, apontamentos.inicio,
-                        apontamentos.fim, apontamentos.duracao, apontamentos.departamento, apontamentos.classificacao,
+                        apontamentos.ID, apontamentos.nome, apontamentos.matricula, apontamentos.departamento, apontamentos.inicio,
+                        apontamentos.fim, apontamentos.duracao, apontamentos.classificacao,
                         apontamentos.processo, apontamentos.detalhamento, apontamentos.observacao
                         );">
                 </p-button>
@@ -47,6 +47,9 @@
         </td>
         <td class="ui-resizable-column">
           {{apontamentos.matricula}}
+        </td>
+         <td class="ui-resizable-column">
+          {{apontamentos.departamento}}
         </td>
         <td pEditableColumn class="ui-resizable-column">
           <p-cellEditor>
@@ -87,9 +90,7 @@
             </ng-template>
           </p-cellEditor>
         </td>
-        <td class="ui-resizable-column">
-          {{apontamentos.departamento}}
-        </td>
+
         <td pEditableColumn class="ui-resizable-column">
           <p-cellEditor>
             <ng-template pTemplate="input">
