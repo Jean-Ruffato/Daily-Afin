@@ -80,12 +80,12 @@ class Apontamento(models.Model):
     inicio = models.DateTimeField('incio', blank=True, null=True)
     fim = models.DateTimeField('fim', blank=True, null=True)
     duracao = models.TimeField('duracao', blank=True, null=True)
-    cliente = models.CharField('cliente', blank=True, null=True, max_length=30, default='null')
-    departamento = models.CharField('departamento', max_length=30, null=True, default='null')
-    classificacao = models.CharField('classificacao', max_length=40, null=True, default='null')
-    processo = models.CharField('processo', max_length=40, null=True, default='null')
-    detalhamento = models.CharField('detalhamento', max_length=300, null=True, default='null')
-    observacao = models.TextField('observacao', max_length=300, null=True, default='null')
+    cliente = models.CharField('cliente', blank=True, null=True, max_length=30)
+    departamento = models.CharField('departamento', max_length=30, null=True)
+    classificacao = models.CharField('classificacao', max_length=40, null=True)
+    processo = models.CharField('processo', max_length=40, null=True)
+    detalhamento = models.CharField('detalhamento', max_length=300, null=True)
+    observacao = models.TextField('observacao', max_length=300, null=True)
 
     def __str__(self):
         return self.nome
