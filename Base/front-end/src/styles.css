@@ -97,6 +97,10 @@ hr{
     text-align: center;
 }
 .acao{
-  padding-left: 15px;
-  padding-right: 15px;
+  white-space: nowrap;
+  margin: 5% 5px;
+}
+.espacamento
+{
+  margin-left: 5px;
 }

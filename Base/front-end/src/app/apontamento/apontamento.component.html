@@ -25,21 +25,15 @@
     </ng-template>
     <ng-template pTemplate="body" let-apontamentos>
       <tr>
-        <div class="ui-g-12 ui-fluid">
-          <div class="ui-g-8">
-            <td>
-              <div class="row acao">
-                <p-button class="ui-button-danger" icon="fas fa-save" (onClick)="onEditComplete(
+        <div class="row-fluid acao">
+            <p-button class="ui-button-danger" icon="fas fa-save" (onClick)="onEditComplete(
                         apontamentos.ID, apontamentos.nome, apontamentos.matricula, apontamentos.departamento, apontamentos.inicio,
                         apontamentos.fim, apontamentos.duracao, apontamentos.classificacao,
                         apontamentos.processo, apontamentos.detalhamento, apontamentos.observacao
                         );">
-                </p-button>
-                <p-button class="ui-button-raised ui-button-rounded" icon="fas fa-trash" (onClick)="onClick(apontamentos.ID)">
-                </p-button>
-              </div>
-            </td>
-          </div>
+              </p-button>
+              <p-button class="espacamento ui-button-raised ui-button-rounded" icon="fas fa-trash" (onClick)="onClick(apontamentos.ID)">
+              </p-button>
         </div>
 
         <td class="ui-resizable-column">
@@ -48,7 +42,7 @@
         <td class="ui-resizable-column">
           {{apontamentos.matricula}}
         </td>
-         <td class="ui-resizable-column">
+        <td class="ui-resizable-column">
           {{apontamentos.departamento}}
         </td>
         <td pEditableColumn class="ui-resizable-column">

@@ -65,6 +65,7 @@ class ApontamentosIDView(APIView):
     def put(self, request, pk, format=None):
         serializer = self.serializer_class(data=request.data, partial=True)
         serializer.is_valid()
+        print(serializer)
         serializer.save()
 
         # Deleta o registro anterior
